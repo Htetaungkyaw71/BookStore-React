@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 100px;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+}
+
+.navBar ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navBar ul a {
+  text-decoration: none;
+  margin-left: 50px;
+}
+
+.AddForm input {
+  margin-right: 10px;
+}
