@@ -1,24 +1,26 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
-
-function Book({title,author,id}) {
-  const dispatch = useDispatch()
+function Book({ title, author, id }) {
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-      dispatch(removeBook(id))
-  }
+    dispatch(removeBook(id));
+  };
 
   return (
     <li>
-        <h4>{title}</h4>
-        <p>
-            {author}
-        </p>
-        <button onClick={handleClick}>Delete</button>
+      <h4>{title}</h4>
+      <p>
+        {author}
+      </p>
+      <button onClick={handleClick} type="button">Delete</button>
     </li>
-  )
+  );
 }
 
-export default Book
+export default Book;
