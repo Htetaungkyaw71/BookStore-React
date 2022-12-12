@@ -1,12 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addBook } from '../redux/books/books'
 
 function Form () {
+  const dispatch = useDispatch()
+  let [book, setBook] = useState({
+    title:"",
+    author:""
+  })
+
+  const handleChange = (e)=>{
+    setBook({
+      ...book,
+      [e.target.name]:e.target.value
+    })
+  }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    const data = {
+      ...book,
+      id: Date.now().toString()
+    }
+    if(book.title.length > 0 && book.title.length > 0 ){
+      dispatch(addBook(data))
+    }
+    else{
+      alert("Fill in the input fields")
+    }
+
+    setBook({
+      title:"",
+      author:"",
+    })
+  }
+
   return (
     <div>
         <h1>Add a Book</h1>
-        <form action="" className='AddForm'>
-            <input type="text" name="title" placeholder='title'/>
-            <input type="text" name="author" placeholder='author'/>
+        <form className='AddForm' onSubmit={handleSubmit}>
+            <input type="text" name="title" placeholder='title' required value={book.title} onChange={handleChange}/>
+            <input type="text" name="author" placeholder='author' required value={book.author} onChange={handleChange}/>
             <input type="submit" />
         </form>
     </div>

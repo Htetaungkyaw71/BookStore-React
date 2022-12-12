@@ -1,11 +1,18 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { checkStatus } from '../redux/categories/categories'
 import Navbar from './Navbar'
 
+
 function Categories() {
+  const dispatch = useDispatch()
+  const handleClick = ()=>{
+    dispatch(checkStatus())
+  }
   return (
     <div>
         <Navbar/>
-        <button>Check Status</button>
+        <button onClick={handleClick}>Check Status</button>
     </div>
   )
 }
