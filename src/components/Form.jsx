@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+/* eslint linebreak-style: ["error", "windows"] */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';

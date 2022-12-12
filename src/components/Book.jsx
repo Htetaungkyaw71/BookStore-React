@@ -1,8 +1,7 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/prop-types */
-
+/* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/books';
 
 function Book({ title, author, id }) {
@@ -22,5 +21,11 @@ function Book({ title, author, id }) {
     </li>
   );
 }
+
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default Book;

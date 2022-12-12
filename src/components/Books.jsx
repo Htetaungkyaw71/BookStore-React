@@ -1,6 +1,4 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable max-len */
-
+/* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Form from './Form';
@@ -14,7 +12,14 @@ function Books() {
     <div>
       <Navbar />
       <ul>
-        {books.map((book) => <Book title={book.title} id={book.id} author={book.author} key={book.id} />)}
+        {books.map((book) => (
+          <Book
+            title={book.title}
+            id={book.id}
+            author={book.author}
+            key={book.id}
+          />
+        ))}
       </ul>
       <Form />
     </div>
