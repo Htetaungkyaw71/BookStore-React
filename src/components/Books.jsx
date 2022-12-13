@@ -4,35 +4,31 @@ import { useDispatch, useSelector } from 'react-redux';
 import Form from './Form';
 import Book from './Book';
 import Navbar from './Navbar';
-import { addBooks, getBooks } from '../redux/books/books';
-
+import { getBooks } from '../redux/books/books';
 
 function Books() {
-  const {books,status} = useSelector((state) => state.book);
+  const { books, status } = useSelector((state) => state.book);
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-  useEffect(()=>{
-      dispatch(getBooks())
-  },[])
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
 
-
-
-  if(!status){
-    return <h1>loading</h1>
+  if (!status) {
+    return <h1>Loading...</h1>;
   }
-
 
   return (
     <div>
       <Navbar />
       <ul>
         {
-        Object.entries(books).map(([key, book]) => (
-          <Book
-          title={book[0].title}
-          id={key}
-          author={book[0].author}
-          key={key}
+      books.map((book) => (
+        <Book
+          title={book.title}
+          id={book.item_id}
+          author={book.author}
+          key={book.item_id}
         />
       ))
         }

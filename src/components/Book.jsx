@@ -2,16 +2,18 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBooks } from '../redux/books/books';
+import { removeBookOne, removeBooks } from '../redux/books/books';
 
 function Book({ title, author, id }) {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-      let data = {
-        item_id:id
-      }
-    dispatch(removeBooks(data));
+    const data = {
+      item_id: id,
+    };
+    dispatch(removeBooks(data)).then(() => {
+      dispatch(removeBookOne(data));
+    });
   };
 
   return (
