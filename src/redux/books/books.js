@@ -1,4 +1,20 @@
-const initialState = [];
+const initialState = [
+  {
+    id: '1',
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+  },
+  {
+    id: '2',
+    title: 'harry',
+    author: 'potter',
+  },
+  {
+    id: '3',
+    title: 'eden',
+    author: 'hazard',
+  },
+];
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
@@ -7,7 +23,7 @@ const bookReducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((item) => item.payload.id !== action.id);
+      return state.filter((item) => item.id !== action.id);
     default:
       return state;
   }
