@@ -12,7 +12,10 @@ function Categories() {
   return (
     <div>
       <Navbar />
-      <button onClick={handleClick} type="button">Check Status</button>
+      <div className="status-outer">
+        <h2 className="construction">Under construction</h2>
+      </div>
+      <button onClick={handleClick} type="button" className="status">Check Status</button>
     </div>
   );
 }

@@ -1,23 +1,288 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   margin: 0;
   padding: 100px;
+  background-color: #f4f5f9;
 }
 
 .navBar {
   display: flex;
   align-items: center;
+  background-color: white;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navBar h1 {
+  color: #02aeff;
+  font-size: 1.875rem;
+  font-weight: 700;
 }
 
 .navBar ul {
   list-style-type: none;
   display: flex;
+  margin: 0;
 }
 
 .navBar ul a {
   text-decoration: none;
-  margin-left: 50px;
+  margin-left: 40px;
+  color: gray;
+  font-size: 15px;
+}
+
+.navBar ul a:hover {
+  color: black;
+}
+
+input {
+  padding: 13px;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 5px;
+  width: 100%;
 }
 
 .AddForm input {
   margin-right: 10px;
+}
+
+.main {
+  background-color: #fafafa;
+  margin: 0;
+}
+
+.main ul {
+  padding: 40px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.main ul li h5,
+h3,
+p {
+  margin: 0;
+}
+
+.main ul li h5 {
+  color: rgb(197, 197, 197);
+}
+
+.main ul li h3 {
+  font-family: "Roboto Slab", serif;
+  margin-top: 0.188rem;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+}
+
+.main ul li p {
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 0.188rem;
+  color: #8599c7;
+}
+
+.main ul li {
+  display: flex;
+  border: 1px solid rgb(231, 231, 231);
+  padding: 30px;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.main ul li .col,
+.col1 {
+  flex: 50%;
+}
+
+.text-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+  border-right: 2px solid #e8e8e8;
+  padding-right: 15px;
+  color: #8599c7;
+  font-size: 15px;
+}
+
+.text-edit {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 15px;
+  margin-right: 30px;
+  cursor: pointer;
+  color: #8599c7;
+  font-size: 15px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.percent {
+  margin: 0;
+  padding: 0;
+  color: rgb(75, 75, 75);
+  font-weight: 500;
+}
+
+.col-inner {
+  display: flex;
+  align-items: center;
+}
+
+.outer-percent {
+  padding: 0;
+  margin-left: 20px;
+}
+
+.cross {
+  width: 2px;
+  height: 70px;
+  background-color: #e8e8e8;
+  margin-left: 30px;
+}
+
+.progress {
+  margin-left: 60px;
+}
+
+.intro {
+  margin-top: 10px !important;
+  color: rgb(122, 122, 122) !important;
+  font-size: 18px !important;
+}
+
+.progress-btn {
+  padding: 10px;
+  padding-left: 13px;
+  padding-right: 13px;
+  cursor: pointer;
+  background-color: #0290ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+hr {
+  margin-top: 60px;
+  color: gray;
+  background-color: gainsboro;
+}
+
+.form {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.form h2 {
+  color: #888;
+  font-size: 20px;
+  margin-top: 0;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0290ff;
+}
+
+.submit-btn {
+  background-color: #0290ff;
+  color: white;
+  border: none;
+  padding-left: 60px;
+  padding-right: 60px;
+  cursor: pointer;
+  width: 30%;
+}
+
+.AddForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  display: none;
+}
+
+.construction {
+  padding-left: 40px;
+  padding-top: 30px;
+  margin: 0;
+  color: black;
+  font-size: 30px;
+}
+
+.status-outer {
+  background-color: #fafafa;
+  margin: 0;
+  padding-bottom: 130px;
+}
+
+@media screen and (max-width: 868px) {
+  .col1 {
+    display: none;
+  }
+
+  .navBar {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navBar h1 {
+    text-align: center;
+  }
+
+  .navBar ul {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .navBar li a {
+    padding: 0;
+    margin: 10px;
+  }
+
+  body {
+    padding: 20px;
+  }
+
+  .main ul {
+    padding: 15px;
+  }
+
+  .AddForm {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .AddForm input {
+    margin-bottom: 10px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+  }
 }
