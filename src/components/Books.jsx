@@ -21,19 +21,25 @@ function Books() {
   return (
     <div>
       <Navbar />
-      <ul>
-        {
-      books.map((book) => (
-        <Book
-          title={book.title}
-          id={book.item_id}
-          author={book.author}
-          key={book.item_id}
-        />
-      ))
-        }
-      </ul>
-      <Form />
+      <div className="main">
+        <ul>
+          {
+            books.map((book) => (
+              <Book
+                title={book.title}
+                id={book.item_id}
+                author={book.author}
+                category={book.category}
+                key={book.item_id}
+              />
+            ))
+          }
+          <hr />
+        </ul>
+
+        <Form />
+      </div>
+
     </div>
   );
 }

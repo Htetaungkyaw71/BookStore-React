@@ -36,12 +36,12 @@ function Form() {
   };
 
   return (
-    <div>
-      <h1>Add a Book</h1>
+    <div className="form">
+      <h2>ADD NEW BOOK</h2>
       <form className="AddForm" onSubmit={handleSubmit}>
-        <input type="text" name="title" placeholder="title" required value={book.title} onChange={handleChange} />
+        <input type="text" name="title" placeholder="Book title" required value={book.title} onChange={handleChange} />
         <input type="text" name="author" placeholder="author" required value={book.author} onChange={handleChange} />
-        <input type="submit" />
+        <input type="submit" className="submit-btn" value="ADD BOOK" />
       </form>
     </div>
   );
