@@ -21,7 +21,6 @@ function Form() {
     e.preventDefault();
     const data = {
       ...book,
-      category: 'comedy',
       item_id: Date.now().toString(),
     };
     if (book.title.length > 0 && book.title.length > 0) {
@@ -40,6 +39,14 @@ function Form() {
       <h2>ADD NEW BOOK</h2>
       <form className="AddForm" onSubmit={handleSubmit}>
         <input type="text" name="title" placeholder="Book title" required value={book.title} onChange={handleChange} />
+        <select name="category" value={book.category} onChange={handleChange} required>
+          <option value="comedy">Comedy</option>
+          <option value="adventure">Adventure </option>
+          <option value="crime">Crime</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="horror">Horror</option>
+          <option value="history">History</option>
+        </select>
         <input type="text" name="author" placeholder="author" required value={book.author} onChange={handleChange} />
         <input type="submit" className="submit-btn" value="ADD BOOK" />
       </form>
