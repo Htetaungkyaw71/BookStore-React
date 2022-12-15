@@ -1,4 +1,4 @@
-/* eslint linebreak-style: ["error", "windows"] */
+/* eslint-disable linebreak-style */
 import { CircularProgressbar } from 'react-circular-progressbar';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -12,7 +12,6 @@ function Book({
   const [percentage, Setpercentage] = useState(0);
 
   const dispatch = useDispatch();
-  // const percentage = 66;
   const handleClick = () => {
     const data = {
       item_id: id,
