@@ -1,14 +1,18 @@
 /* eslint linebreak-style: ["error", "windows"] */
-import React from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeBookOne, removeBooks } from '../redux/books/books';
+import 'react-circular-progressbar/dist/styles.css';
 
 function Book({
   title, author, id, category,
 }) {
-  const dispatch = useDispatch();
+  const [percentage, Setpercentage] = useState(0);
 
+  const dispatch = useDispatch();
+  // const percentage = 66;
   const handleClick = () => {
     const data = {
       item_id: id,
@@ -16,6 +20,22 @@ function Book({
     dispatch(removeBooks(data)).then(() => {
       dispatch(removeBookOne(data));
     });
+  };
+
+  const increaseClick = () => {
+    if (percentage >= 100) {
+      Setpercentage(100);
+    } else {
+      Setpercentage(() => percentage + 10);
+    }
+  };
+
+  const decreaseClick = () => {
+    if (percentage <= 0) {
+      Setpercentage(0);
+    } else {
+      Setpercentage(() => percentage - 10);
+    }
   };
 
   return (
@@ -34,20 +54,15 @@ function Book({
       </div>
       <div className="col1">
         <div className="col-inner">
-          <div className="circle" />
-          <div className="outer-percent">
-            <h1 className="percent">8%</h1>
-            <p>
-              completed
-            </p>
-          </div>
+          <CircularProgressbar value={percentage} text={`${percentage}%`} />
           <div className="cross" />
           <div className="progress">
             <p>CURRENT CHAPTER</p>
             <p className="intro">
               Introduction
             </p>
-            <button className="progress-btn" type="button">UPDATE PROGRESS</button>
+            <button className="progress-btn" type="button" onClick={increaseClick}>INCREASE PROGRESS</button>
+            <button className="progress-btn" type="button" onClick={decreaseClick}>DECREASE PROGRESS</button>
           </div>
         </div>
 

@@ -185,28 +185,15 @@ p {
   transform: rotate(45deg);
 }
 
-.percent {
-  margin: 0;
-  padding: 0;
-  color: rgb(75, 75, 75);
-  font-weight: 500;
-}
-
 .col-inner {
   display: flex;
   align-items: center;
-}
-
-.outer-percent {
-  padding: 0;
-  margin-left: 20px;
 }
 
 .cross {
   width: 2px;
   height: 70px;
   background-color: #e8e8e8;
-  margin-left: 30px;
 }
 
 .progress {
@@ -221,8 +208,6 @@ p {
 
 .progress-btn {
   padding: 10px;
-  padding-left: 13px;
-  padding-right: 13px;
   cursor: pointer;
   background-color: #0290ff;
   color: white;
@@ -284,6 +269,11 @@ input:focus {
   background-color: #fafafa;
   margin: 0;
   padding-bottom: 130px;
+}
+
+.CircularProgressbar {
+  width: 90px;
+  height: 90px;
 }
 
 @media screen and (max-width: 868px) {
