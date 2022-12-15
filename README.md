@@ -98,7 +98,7 @@ After you're finished please remove all the comments and instructions!
 
 - **[Add]**
 - **[Delete]**
-- **[Edit]**
+- **[Filter]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,7 +108,7 @@ After you're finished please remove all the comments and instructions!
 
 > Add a link to your deployed project.
 
-- [Live Demo Link]()
+- [Live Demo Link](https://bookstore-r6zr.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
